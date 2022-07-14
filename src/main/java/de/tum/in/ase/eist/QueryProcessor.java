@@ -15,12 +15,11 @@ public class QueryProcessor {
            return "app-eistea";
         } if (query.contains("numbers")) { // TODO extend the programm here
             if (query.contains("largest")) {
-                String newQuery = query.split(":");
-                char[] letters = newQuery.toCharArray();
+                String[] newQuery = query.split(" ");
                 int result = 0;
                 for (int i = 0; i <= letters.length - 1; i++) {
-                    if (Integer.parseInt(letters[i]) > result) {
-                        result = Integer.parseInt(letters[i]);
+                    if (Integer.parseInt(newQuery[i]) > result) {
+                        result = Integer.parseInt(newQuery[i]);
                     }
                 }
                 return String.valueOf(result);
